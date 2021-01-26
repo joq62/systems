@@ -1,0 +1,94 @@
+● asus
+    State: degraded
+     Jobs: 0 queued
+   Failed: 4 units
+    Since: tis 2021-01-26 20:38:30 CET; 20min ago
+   CGroup: /
+           ├─1307 /sbin/cgmanager -m name=systemd
+           ├─init.scope
+           │ └─1 /sbin/init splash
+           ├─system.slice
+           │ ├─avahi-daemon.service
+           │ │ ├─1161 avahi-daemon: running [asus.local
+           │ │ └─1193 avahi-daemon: chroot helpe
+           │ ├─thermald.service
+           │ │ └─1387 /usr/sbin/thermald --no-daemon --dbus-enable
+           │ ├─dbus.service
+           │ │ └─1164 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+           │ ├─ModemManager.service
+           │ │ └─1163 /usr/sbin/ModemManager
+           │ ├─cron.service
+           │ │ └─1303 /usr/sbin/cron -f
+           │ ├─mosquitto.service
+           │ │ └─1611 /usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
+           │ ├─wpa_supplicant.service
+           │ │ └─2276 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+           │ ├─colord.service
+           │ │ └─1644 /usr/lib/colord/colord
+           │ ├─systemd-journald.service
+           │ │ └─231 /lib/systemd/systemd-journald
+           │ ├─snapd.service
+           │ │ └─1394 /usr/lib/snapd/snapd
+           │ ├─vsftpd.service
+           │ │ └─1774 /usr/sbin/vsftpd /etc/vsftpd.conf
+           │ ├─systemd-timesyncd.service
+           │ │ └─876 /lib/systemd/systemd-timesyncd
+           │ ├─cups.service
+           │ │ └─1160 /usr/sbin/cupsd -l
+           │ ├─ssh.service
+           │ │ └─1853 /usr/sbin/sshd -D
+           │ ├─systemd-logind.service
+           │ │ └─1373 /lib/systemd/systemd-logind
+           │ ├─systemd-udevd.service
+           │ │ └─255 /lib/systemd/systemd-udevd
+           │ ├─polkitd.service
+           │ │ └─1405 /usr/lib/policykit-1/polkitd --no-debug
+           │ ├─cups-browsed.service
+           │ │ └─1308 /usr/sbin/cups-browsed
+           │ ├─NetworkManager.service
+           │ │ ├─1302 /usr/sbin/NetworkManager --no-daemon
+           │ │ ├─2561 /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /var/run/dhclient-wlan0.pid -lf /var/lib/NetworkManager/dhclient-69dfd8c9-5ed9-4321-8053-58b990b276fe-wlan0.lease -cf /var/lib/NetworkManager/dhclient-wlan0.conf wlan0
+           │ │ └─2874 /usr/sbin/dnsmasq --no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/var/run/NetworkManager/dnsmasq.pid --listen-address=127.0.1.1 --cache-size=0 --conf-file=/dev/null --proxy-dnssec --enable-dbus=org.freedesktop.NetworkManager.dnsmasq --conf-dir=/etc/NetworkManager/dnsmasq.d
+           │ ├─irqbalance.service
+           │ │ └─1641 /usr/sbin/irqbalance --pid=/var/run/irqbalance.pid
+           │ ├─whoopsie.service
+           │ │ └─1305 /usr/bin/whoopsie -f
+           │ ├─rsyslog.service
+           │ │ └─1383 /usr/sbin/rsyslogd -n
+           │ ├─teamviewerd.service
+           │ │ └─3436 /opt/teamviewer/tv_bin/teamviewerd -d
+           │ ├─docker.service
+           │ │ ├─3413 /usr/bin/dockerd -H fd://
+           │ │ └─3554 docker-containerd -l unix:///var/run/docker/libcontainerd/docker-containerd.sock --metrics-interval=0 --start-timeout 2m --state-dir /var/run/docker/libcontainerd/containerd --shim docker-containerd-shim --runtime docker-runc
+           │ ├─acpid.service
+           │ │ └─1367 /usr/sbin/acpid
+           │ └─bluetooth.service
+           │   └─1385 /usr/lib/bluetooth/bluetoothd
+           └─user.slice
+             ├─user-1000.slice
+             │ ├─session-1.scope
+             │ │ ├─3428 /bin/login --   
+             │ │ └─6572 -bash
+             │ ├─user@1000.service
+             │ │ └─init.scope
+             │ │   ├─6559 /lib/systemd/systemd --user
+             │ │   └─6561 (sd-pam)         
+             │ └─session-2.scope
+             │   ├─11098 sshd: pi [priv]     
+             │   ├─11125 sshd: pi@pts/0      
+             │   ├─11126 -bash
+             │   └─11436 systemctl status
+             └─user-127.slice
+               ├─user@127.service
+               │ └─init.scope
+               │   ├─2610 /lib/systemd/systemd --user
+               │   └─2612 (sd-pam)         
+               └─session-c2.scope
+                 ├─2726 /usr/lib/emqx/erts-10.7/bin/run_erl -daemon //var/lib/emqx/emqx_erl_pipes/emqx@127.0.0.1/ /var/log/emqx exec "/usr/bin/emqx" "console"
+                 ├─2869 /usr/lib/emqx/erts-10.7/bin/beam.smp -P 2097152 -Q 1048576 -e 256000 -spp true -A 4 -IOt 4 -SDio 8 -- -root /usr/lib/emqx -progname usr/bin/emqx -- -home /var/lib/emqx -- -boot /usr/lib/emqx/releases/4.2.3/emqx -mode embedded -boot_var ERTS_LIB_DIR /usr/lib/emqx/erts-10.7/../lib -mnesia dir "/var/lib/emqx/mnesia/emqx@127.0.0.1" -config /var/lib/emqx/configs/app.2021.01.26.20.39.41.config -kernel net_ticktime 120 -shutdown_time 30000 -setcookie emqxsecretcookie -name emqx@127.0.0.1 -- -vm_args /var/lib/emqx/configs/vm.2021.01.26.20.39.41.args -start_epmd false -epmd_module ekka_epmd -proto_dist ekka -- console --
+                 ├─3386 erl_child_setup 1024
+                 ├─3520 sh -s disksup
+                 ├─3521 /usr/lib/emqx/lib/os_mon-2.5.1/priv/bin/memsup
+                 ├─3522 /usr/lib/emqx/lib/os_mon-2.5.1/priv/bin/cpu_sup
+                 ├─3548 inet_gethost 4
+                 └─3549 inet_gethost 4
